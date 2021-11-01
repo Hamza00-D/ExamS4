@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ Equipment.id }}{% endblock %}
+{% block body %}
+{% if Equipment %}
+<table id="Equipment" class="table table-striped">
+
+    <thead>
+    <tr>
+    <th>EquipmentName</th>
+    <th>EquipmentMark</th>
+    <th>EquipmentPrice</th>
+    <th>EquipmentDescription</th>
+    <th>EquipmentQuantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+    <td>{{ Equipment.EquipmentName }}</td>
+    <td>{{ Equipment.EquipmentMark }}</td>
+    <td>{{ Equipment.EquipmentPrice }}</td>
+    <td>{{ Equipment.EquipmentDescription }}</td>
+    <td>{{ Equipment.EquipmentQuantity }}</td>
+    
+  </tbody>
+  </table> 
+<a href="/"class="btn btn-dark">Back</a>
+
+{% endif %}
+{% endblock %}
+
+

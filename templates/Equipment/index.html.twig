@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des Equipements{% endblock %}
+{% block body %}
+{% if Equipment %}
+ <table id="Equipment" class="table table-striped">
+ <thead>
+ <tr>
+ <th>EquipmentName</th>
+ <th>EquipmentMark</th>
+ <th>EquipmentQuantity</th>
+ <th>Actions</th>
+ </tr>
+ </thead>
+ <tbody>
+ {% for Equipement in Equipment %}
+ <tr>
+ <td>{{ Equipement.EquipmentName }}</td>
+ <td>{{ Equipement.EquipmentMark }}</td>
+ <td>{{ Equipement.EquipmentQuantity }}</td>
+ <td>
+ <a href="/Equipment/{{ Equipement.id }}" class="btn btn-dark">Détails</a>
+ 
+ </td>
+ </tr>
+ {% endfor %}
+ </tbody>
+ </table>
+ {% else %}
+<p>Aucun Equipement</p>
+ {% endif %}
+{% endblock %}
